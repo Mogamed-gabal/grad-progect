@@ -1,0 +1,80 @@
+
+<div class="page w-100 ">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="heading text-center">
+                    <p class="right-aide-headin">userActions</p>
+                </div>
+                
+                <ul class="d-flex justify-content-between list-unstyled services">
+                    <li>
+                        <a class=" px-2 me-2 my-1 btn btn-secondary" routerLink="/userPage/userLosted">LostedPeoble</a>
+                    </li>
+                    <li>
+                        <a class=" px-2 me-2 my-1 btn btn-secondary" routerLink="/userPage/userobjects">LostedObjects</a>
+                    </li>
+                    <li>
+                        <div class="dropup-center dropup">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                CriminalHistory
+                            </button>
+                            <ul class="dropdown-menu">
+                                <!-- <li><a class="dropdown-item pt-1" routerLink="/userPage/userCrimrinalAnalog">CriminalAnalog</a></li> -->
+                                <li><a class="dropdown-item pt-1" routerLink="/userPage/userMobileRebort">MobileRebort</a></li>
+                                <li><a class="dropdown-item pt-1" routerLink="/userPage/userCarsRebort">CarsReborts</a></li>
+                                <li><a class="dropdown-item pt-1" routerLink="/userPage/rebort">Losted</a></li>
+                            </ul>
+                          </div>
+                    </li>
+                </ul>
+
+
+
+                <router-outlet>
+                
+                </router-outlet>
+            </div>
+            <div class="col-md-6 left-side">
+                <div class="container ms-5">
+                    <div class="heading-img text-center position-relative">
+                        <div class="edit-user-img">
+                            <i (click)="opnForm()" class="edit-user-img fa-solid fa-user-pen"></i>
+                        </div>
+                       
+                        <img src="{{userImg}}" alt="">
+                    </div>
+                    <div class="user-data text-center pb-5">
+                        <ul class="list-unstyled">
+                            <li class=" mb-3">
+                            {{userName}}
+                            </li>
+                            
+                            <li class=" mb-3">
+                                {{user_Jop}}
+                                </li>
+                                <li class=" mb-3">
+                                    {{user_phone}}
+                                    </li>
+                                    <li style="width: 70%;" class=" mb-3">
+                                        {{userMail}}
+                                    </li>
+                           
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="openForm" class="formDetails vh-100 align-items-center  position-fixed top-0 start-0 end-0 bottom-0">
+    <div class="container w-50 p-5 bg-white submit-data text-center">
+            <div class="text">
+                <label for="formFile py-5" class="form-label">upload Your Img</label>
+                 <input class="form-control" type="file" (change)="onFileSelect($event)" name="user_img" id="formFile" >
+                <button (click)="sendData() " class="btn btn-primary mb-3 mt-3 px-5 py-2">Submit</button> <br>
+                <button (click)="openForm=false" class="btn btn-secondary mb-3 px-4 py-1">cansel</button>
+            </div>
+    </div>
+</div>

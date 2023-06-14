@@ -1,0 +1,67 @@
+<div class="container-fluid p-5">
+    <div class="row d-flex justify-content-between">
+        <div class="col-md-6 p-2">
+        <img class=" w-100 p-2" src="../../assets/feedback.svg" alt="">
+        </div>
+       
+        <div class="col-md-6 p-2 mt-5">
+            <form (ngSubmit)="saveComplains(complainsForm)" [formGroup]="complainsForm">
+                <label for="full_name">Full Name is:</label>
+                <input formControlName="full_name" class=" form-control p-2 mb-2" />
+                <div  *ngIf="complainsForm.get('full_name')?.errors&&complainsForm.get('full_name')?.touched">
+                    <p *ngIf="complainsForm.get('full_name')?.getError('required')" class=" alert alert-danger pt-1">Name is requierd</p>
+                    <p *ngIf="complainsForm.get('full_name')?.getError('minlength')" class=" alert alert-danger pt-1">
+                        Name is to short
+                    </p>
+                    <p *ngIf="complainsForm.get('full_name')?.getError('maxlength')" class=" alert alert-danger pt-1">
+                        Name can not be more than 30char
+                    </p>
+        
+                </div>
+                 
+                <label for="email"></label>
+                <input formControlName="email" id="email" class=" form-control px-2 py-3 mb-2" type="email" placeholder="enter valid email....">
+                <div  *ngIf="complainsForm.get('email')?.errors&&complainsForm.get('email')?.touched">
+                    <p *ngIf="complainsForm.get('email')?.getError('required')" class=" alert alert-danger pt-1">
+                        Email is requierd
+                    </p>
+                    <p *ngIf="complainsForm.get('email')?.getError('email')" class=" alert alert-danger pt-1">
+                        Enetr Valid Email
+                    </p>
+                   
+        
+                </div>
+                 <select formControlName="type" class="form-select mt-2 p-2" aria-label="Default select example">
+                    <option selected>Open this select menu</option>
+                    <option value="1">complain</option>
+                    <option value="2">asking</option>
+                  </select>
+                  
+
+                  <textarea formControlName="texterea" name="" id="" cols="30" rows="10" placeholder="Enter Your Complain"></textarea>
+                  <div  *ngIf="complainsForm.get('texterea')?.errors&&complainsForm.get('texterea')?.touched">
+                    <p *ngIf="complainsForm.get('texterea')?.getError('required')" class=" alert alert-danger pt-1">
+                        Comment is requierd
+                    </p>
+                    <p *ngIf="complainsForm.get('texterea')?.getError('minLength')" class=" alert alert-danger pt-1">
+                        Complains canNot be less than 100 char
+                    </p>
+                   
+        
+                </div>
+                <div class="buttons">
+                    <button  class=" btn btn-primary px-2 pt-1" type="submit" >
+                        <span  *ngIf="isLoading">
+                           <i class=" fas fa-spinner fa-spin"></i>
+                       </span>
+                       <span *ngIf="!isLoading">
+                           Send
+                       </span>
+                       </button>  
+                </div>
+
+        
+            </form>
+        </div>
+    </div>
+</div>

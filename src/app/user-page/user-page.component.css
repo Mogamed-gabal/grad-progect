@@ -1,0 +1,70 @@
+.container
+{
+    padding-top: 47px;
+    background-color: #e0e0e085;
+    margin: 20px auto;
+    border-radius: 14px;
+    box-shadow: #0000008a -9px 2px 9px 0px;;
+}
+.heading p
+{
+    font-family: inherit;
+    font-size: 25px;
+    font-weight: 800;
+}
+.left-side
+{
+    padding: 57px;
+    transform: translateY(-40px);
+}
+.heading-img img
+{
+    width: 153px;
+    border-radius: 50%;
+    padding: 20px;
+    transform: translateY(-46px);
+}
+.user-data ul li 
+{
+    font-size: 19px;
+    font-weight: 700;
+    font-family: inherit;
+    box-shadow: 10px 5px -4px black;
+    box-shadow: black 0px 0px 9px 0px;
+    width: 54%;
+    padding: 7px;
+    margin: auto;
+    border-radius: 6px;
+}
+.services 
+{
+    padding-left: 48px;
+    transform: translateX(10px);
+}
+.right-aide-headin
+{
+    transform: translateX(20px);
+}
+.edit-user-img
+{
+    position: absolute;
+    top: 27px;
+    left: 134px;
+    font-size: 27px;
+    color: #18185666;
+    cursor: pointer;
+}
+.formDetails
+{
+    background-color: #ffffff91;
+}
+.submit-data
+{
+    transform: translateY(145px);
+}
+label
+{
+    font-size: 23px;
+    font-weight: 600;
+    font-family: fangsong;
+}

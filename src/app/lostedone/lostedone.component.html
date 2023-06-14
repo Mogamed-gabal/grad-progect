@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="heading d-flex">
+        <div class="input-group flex-nowrap w-50 m-auto p-5">
+            <i class="fa-brands fa-searchengin search"></i>
+            <input [(ngModel)]="term" type="text" class="form-control" placeholder="Search By Name..." aria-label="Username" aria-describedby="addon-wrapping">
+          </div>
+          <div class="cam-cheaking d-flex align-items-center">
+            <button class="btn btn-primary ved-obt">
+                <span (click)="OpenCam()" *ngIf="!openStream" > OpeanPicCheacker</span>
+                <span (click)="closeCam()" *ngIf="openStream">ClosePicCheacker</span>
+               </button>
+            <webcam class="ved" *ngIf="openStream" [height]="450" [width]="450" [videoOptions]="videoOptions " (imageCapture)="handleImageCapture($event)">
+            </webcam>
+          </div>
+    </div>
+    
+    <div class="row g-4">
+        <div *ngFor="let peoble of losted|search:term " class="col-md-3">
+            
+                 <div class="box">
+                    <a [routerLink]="['/lostedOneDetails',peoble._id]">
+                        <img class=" w-100" [src]="peoble.img" alt="">
+                <div class="person-caption w-100 bg-light text-center">
+                    <h4  class="  ">
+                        {{peoble.fullName}}
+                    
+                    </h4>
+                </div>
+                    </a>
+                
+            </div>
+           
+         </div>
+    </div>
+</div>

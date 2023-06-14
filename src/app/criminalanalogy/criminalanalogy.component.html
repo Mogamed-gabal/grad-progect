@@ -1,0 +1,66 @@
+<div class="conatiner py-5 mt-3 w-75 m-auto">
+<div class="heading text-center">
+    <h2 class=" py-2">criminalForm</h2>
+</div>
+<p class=" alert alert-danger" *ngIf="err">{{erroeMessage}}</p>
+<form [formGroup]="criminalForm" action="">
+
+        <label for="secondPhoneNum">secondPhoneNum</label>
+        <input class=" mb-4 form-control" id="secondPhoneNum" type="text" formControlName="secondPhoneNum" placeholder="please enter a phone number another the one you interd in registraion">
+        <!-- ERRPRS ALERTS -->
+        <div *ngIf="criminalForm.get('secondPhoneNum')?.errors&&criminalForm.get('secondPhoneNum')?.touched">
+        <p class="alert alert-danger" *ngIf="criminalForm.get('secondPhoneNum')?.getError('required')">this field is requierd</p>
+        <p class="alert alert-danger" *ngIf="criminalForm.get('secondPhoneNum')?.getError('pattern')">inter valid Mobile number</p>
+        </div>
+
+
+        <label for="homePhone">homePhone</label>
+        <input class=" mb-4 form-control" id="homePhone" type="text" formControlName="homePhone" placeholder="please enter a phone number another the one you interd in registraion">
+        <!-- ERRPRS ALERTS -->
+        <div *ngIf="criminalForm.get('homePhone')?.errors&&criminalForm.get('homePhone')?.touched">
+        <p class="alert alert-danger" *ngIf="criminalForm.get('homePhone')?.getError('required')">this field is requierd</p>
+        </div>
+
+
+        <label for="workPhoneNum">workPhoneNum</label>
+        <input class=" mb-4 form-control" id="workPhoneNum" type="text" formControlName="workPhoneNum" placeholder="please enter a phone number another the one you interd in registraion">
+        <!-- ERRPRS ALERTS -->
+        <div *ngIf="criminalForm.get('workPhoneNum')?.errors&&criminalForm.get('workPhoneNum')?.touched">
+        <p class="alert alert-danger" *ngIf="criminalForm.get('workPhoneNum')?.getError('required')">this field is requierd</p>
+        </div>
+
+
+        <label for="secondPhoneNum">policiaArea</label>
+        <input class=" mb-4 form-control" id="secondPhoneNum" type="text" formControlName="referTO" placeholder="please enter your police arae center polceStation">
+        <!-- ERRPRS ALERTS -->
+        <div *ngIf="criminalForm.get('referTO')?.errors&&criminalForm.get('referTO')?.touched">
+        <p class="alert alert-danger" *ngIf="criminalForm.get('referTO')?.getError('required')">this field is requierd</p>
+        </div>
+        <button [disabled]="criminalForm.invalid"  (click)="openFormData()" class=" btn btn-primary">submit</button>
+        
+
+</form>
+
+<div *ngIf="openForm" class="formDetails  position-fixed top-0 start-0 end-0 bottom-0">
+    <div class="container p-5 bg-white submit-data text-center">
+            <div class="heading">
+                <img src="../../assets/submit.jpeg" alt="">
+            </div>
+            <div class="text">
+                <p class=" alert alert-danger">please save take a copy of these data</p>
+                <p>
+                    Mr:{{userName}} with phone number:{{userPhone}}and nationalId{{userId}}your number to attendes is {{num}}  at {{date}}  tommorow so  pleace make sure of all of ypur data before sending it to avoid the criminal responspility
+                </p>
+                <button  (click)="sendData() "  class=" btn btn-primary px-2 pt-1" type="submit" >
+                    <span  *ngIf="isLoading">
+                       <i class=" fas fa-spinner fa-spin"></i>
+                   </span>
+                   <span *ngIf="!isLoading">
+                    Submit
+                   </span>
+                   </button>   <br>
+                <button (click)="openForm=false" class="btn btn-secondary mb-3 px-4 py-1">cansel</button>
+            </div>
+    </div>
+</div>
+</div>

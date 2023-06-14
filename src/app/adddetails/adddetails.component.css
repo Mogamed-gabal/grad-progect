@@ -1,0 +1,43 @@
+.container
+{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+h2
+{
+    position: relative;
+}
+h2::before
+{
+    content: "";
+    position: absolute;
+    bottom: -11px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 35px;
+    height: 3px;
+    background-image: linear-gradient(183deg,rgb(6 6 24),rgb(26 62 81));
+    cursor: cell;
+    transition:1s ease;
+}
+h2::after
+{
+    content: "";
+    position: absolute;
+    bottom: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 3px;
+    background-image: linear-gradient(183deg,rgb(6 6 24),rgb(26 62 81));
+    cursor: cell;
+    transition:1s ease;
+}
+h2:hover:before
+{
+    width: 90px;
+}
+h2:hover::after
+{
+    width: 35px;
+}

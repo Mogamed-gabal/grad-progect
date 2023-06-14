@@ -1,0 +1,30 @@
+<div class="container m-auto my-2" *ngFor="let rebort of data " >
+
+    <div class="headding d-flex justify-content-between">
+        <div class="img-box" style=" padding-left: 31px;">
+            <img src="../../assets/download.png" style="border-radius: 50%;
+           " alt="">
+        </div>
+      
+
+        <p class="heading-text">Egyption Police Station</p>
+    </div>
+    <div class="rebo">
+        <div class="rebo-heading w-100 text-center">
+            <h2>Car Rebort</h2>
+        </div>
+        <div class="content" >
+            <p class="name"><span class="name-heading"> Name</span>/{{rebort.full_name}}</p>
+            <p class="Losted"><span class="Losted-thing">model</span>/{{rebort.model}}</p>
+            <p class="Place"><span>brand</span> /{{rebort.brand}}</p>
+            <p class="Place"><span>color</span> /{{rebort.color}}</p>
+            <p class="Place"><span>licenPlate</span> /{{rebort.licenPlate}}</p>
+            <p class="desc"><span>UserSays</span>/{{rebort.dwescribtio}}</p>
+            <p class="desc"><span>RebortNumber</span>:{{rebort.rebortNum}}</p>
+
+        </div>
+        <div class="state">
+           <button class=" btn btn-secondary">{{rebort.state}}</button>
+        </div>
+        </div>
+        </div>

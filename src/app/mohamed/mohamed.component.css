@@ -1,0 +1,60 @@
+.headding
+{
+    border-bottom: 1px solid;
+}
+img
+{
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    padding: 6px;
+}
+.headding p
+{
+    font-size: 19px;
+    font-weight: 900;
+    padding-left: 16px;
+    padding-top: 22px;
+    margin-left: -36px;
+    transform: translate(-3px, -3px);
+
+}
+.container
+{
+    border: 1px solid;
+    transform: translateX(36px);
+    padding-bottom: 17px;
+    background-color: white;
+
+}
+h2
+{
+    padding: 8px;
+    font-weight: 700;
+}
+.content span
+{
+    font-size: 22px;
+    font-weight: 600;
+}
+.content p
+{
+
+font-size: 19px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+.bending
+{
+    position: relative;
+}
+.bending::before
+{position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #3b3737;
+    content: "";
+    border-radius: 50%;
+    left: -12px;
+    top: 11px;
+}

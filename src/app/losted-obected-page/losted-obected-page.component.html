@@ -1,0 +1,29 @@
+<div class="container p-5 mb-5">
+    <div class="selector d-flex justify-content-center  categories">
+      
+        <p class="p3" style="padding-right: 5px;margin-top: 17px;" (click)="getAllCategories()">all</p>
+            <ul class=" list-unstyled" *ngFor="let category of  categories">
+               
+                <li class=" p-3 " (click)="getCategories(category)">{{category}}</li>
+            
+            </ul>
+          </div>    
+    <div class="input-group flex-nowrap w-50 m-auto p-5">
+        <i class="input-group-text fa-search" id="addon-wrapping"></i>
+        <input [(ngModel)]="term" type="text" class="form-control" placeholder="Search By Name..." aria-label="Username" aria-describedby="addon-wrapping">
+      </div>
+    <div class="row g-4 d-flex justify-content-between">
+        <div *ngFor="let peoble of losted " class="col-md-4 ">
+            <div class="card " style="width: 18rem;">
+                <img  [src]="imgPrefix+peoble.img" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{peoble.user_name}}</h5>
+                <p  class="card-text" >{{peoble.describtion}}</p>
+                  <a [routerLink]="" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            
+           
+         </div>
+    </div>
+</div>

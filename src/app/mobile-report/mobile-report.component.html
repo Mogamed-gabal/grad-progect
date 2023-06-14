@@ -1,0 +1,91 @@
+<div class="w-100 text-center">
+    <h2 class=" pb-2 pt-4">MobileRebort</h2>
+</div>
+
+
+<div class="container w-75 m-auto pb-5">
+    
+
+<p class=" alert alert-danger" *ngIf="err">{{erroeMessage}}</p>
+<form [formGroup]="mobileRebortForm" action="">
+
+    <label for="full-name" class="form-label">Full-Name</label>
+        <input type="text " formControlName="full_name" class="form-control mb-3" id="full-name" placeholder="Mohamed Gamal Hamed">
+        <div  *ngIf="mobileRebortForm.get('full_name')?.errors&&mobileRebortForm.get('full_name')?.touched">
+            <p *ngIf="mobileRebortForm.get('full_name')?.getError('required')" class=" alert alert-danger pt-1">Name is requierd</p>
+            <p *ngIf="mobileRebortForm.get('full_name')?.getError('minlength')" class=" alert alert-danger pt-1">
+                Name is to short
+            </p>
+            <p *ngIf="mobileRebortForm.get('full_name')?.getError('maxlength')" class=" alert alert-danger pt-1">
+                Name can not be more than 20char
+            </p>
+        </div>
+
+
+
+        <label for="SerialNumber" class="form-label">SerialNumber</label>
+        <input type="SerialNumber" formControlName="SerialNumber" class="form-control mb-3" id="SerialNumber">
+        <div  *ngIf="mobileRebortForm.get('SerialNumber')?.errors&&mobileRebortForm.get('SerialNumber')?.touched">
+            <p *ngIf="mobileRebortForm.get('SerialNumber')?.getError('required')" class=" alert alert-danger pt-1">
+                SerialNumber is requierd
+            </p>
+        </div>
+
+
+
+        <label for="model" class="form-label">MobileModel</label>
+        <input type="text " formControlName="model" class="form-control mb-3" id="model" placeholder="">
+        <div  *ngIf="mobileRebortForm.get('model')?.errors&&mobileRebortForm.get('model')?.touched">
+            <p *ngIf="mobileRebortForm.get('model')?.getError('required')" class=" alert alert-danger pt-1">
+                model is requierd
+            </p>
+        </div>
+
+
+        
+        <label for="dateof" class="form-label">Dateof</label>
+        <input type="text " formControlName="dateof" class="form-control mb-3" id="dateof" placeholder="">
+        <div  *ngIf="mobileRebortForm.get('dateof')?.errors&&mobileRebortForm.get('dateof')?.touched">
+            <p *ngIf="mobileRebortForm.get('dateof')?.getError('required')" class=" alert alert-danger pt-1">
+                dateof is requierd
+            </p>
+        </div>
+
+        
+
+
+
+        <label for="brand" class="form-label">brand</label>
+        <input type="text " formControlName="brand" class="form-control mb-3" id="brand">
+        <div  *ngIf="mobileRebortForm.get('brand')?.errors&&mobileRebortForm.get('brand')?.touched">
+            <p *ngIf="mobileRebortForm.get('brand')?.getError('required')" class=" alert alert-danger pt-1">
+                brand is requierd
+            </p>
+        </div>
+        
+        
+        
+        <label for="description" class="form-label">what happend?</label>
+        <textarea class=" form-control mb-2" name="" formControlName="dwescribtio" id="" cols="30" rows="10"></textarea>
+        <div  *ngIf="mobileRebortForm.get('dwescribtio')?.errors&&mobileRebortForm.get('dwescribtio')?.touched">
+            <p *ngIf="mobileRebortForm.get('dwescribtio')?.getError('required')" class=" alert alert-danger pt-1">
+                Describtion is requierd
+            </p>
+        </div>
+
+
+
+        
+
+        
+        <button  (click)="sendData()"  class=" btn btn-primary px-2 pt-1" type="submit" >
+            <span  *ngIf="isLoading">
+                <i class=" fas fa-spinner fa-spin"></i>
+            </span>
+            <span  *ngIf="!isLoading" >
+                Submit
+            </span>
+            </button>  
+
+</form>
+</div>

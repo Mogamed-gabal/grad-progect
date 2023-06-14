@@ -1,0 +1,28 @@
+.container
+{
+    padding-top: 75px;
+    padding-bottom: 75px;
+    
+}
+
+i
+{
+    font-size: 139px;
+    padding: 51px 0 7px;
+    cursor: pointer;
+    color: #2890ff;
+}
+h3
+{
+    font-size: 33px;
+    letter-spacing: 2.3px;
+    padding: 3px;
+}
+p
+{
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 2px;
+    line-height: 18px;
+    padding: 5px;
+}

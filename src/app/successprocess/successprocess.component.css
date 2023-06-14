@@ -1,0 +1,25 @@
+.container
+{
+    padding:150px 0 150px 0 ;
+}
+.main-i
+{
+    font-size: 150px;
+    padding: 10px;
+    color: blue;
+}
+h3
+{
+    letter-spacing: 2px;
+    font-size: 27px;
+    font-weight: 700;
+    padding: 7px;
+}
+h4
+{
+    padding: 10px;
+    letter-spacing: 3px;
+    text-decoration: underline;
+    color: #0000fff7;
+    cursor: pointer;
+}

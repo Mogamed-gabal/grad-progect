@@ -1,0 +1,59 @@
+<div class="container w-75 m-auto">
+    <div class="caption w-100 text-center pb-5">
+        <h2>
+            Descreption Form
+        </h2>
+
+        <p class=" alert alert-danger" *ngIf="err">{{erroeMessage}}</p>
+    </div>
+<div  class="w-100">
+
+<form action="submit" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <label for="nameInput1" class="form-label">Full_Name</label>
+    <input formControlName ="user_name" name="user_name" type="text" class="form-control mb-3" id="nameInput1" placeholder="Enter Name From Id">
+    <!-- <div *ngIf="formdetails.get('fullName')?.errors&&formdetails.get('fullName')?.touched">
+    <p *ngIf="formdetails.get('fullName')?.getError('required')" class=" alert alert-danger ">Name is Requierd</p>
+    <p *ngIf="formdetails.get('fullName')?.getError('maxlength')" class=" alert alert-danger  ">Name Can't be less than 10</p>
+    <p *ngIf="formdetails.get('fullName')?.getError('minlength')" class=" alert alert-danger  ">Name Can't be more than 10</p>
+    </div> -->
+
+
+    <label for="exampleFormControlInput1" class="form-label ">Email address</label>
+    <input type="email" formControlName="userEmail" name="userEmail" class="form-control mb-3" id="exampleFormControlInput1" placeholder="name@example.com">
+    <!-- <div *ngIf="formdetails.get('email')?.errors&&formdetails.get('email')?.touched">
+        <p *ngIf="formdetails.get('email')?.getError('required')" class=" alert alert-danger ">Email is Requierd</p>
+        <p *ngIf="formdetails.get('email')?.getError('email')" class=" alert alert-danger  ">Enter Valid Email</p>
+    </div> -->
+
+    
+    <select formControlName="category" name="category" class="form-select mt-2 p-2" aria-label="Default select example">
+        <option selected>Open this select menu</option>
+        <option value="car">car</option>
+        <option value="mobile">mobile</option>
+        <option value="package">package</option>
+      </select>
+    
+    <label for="describtion" class="form-label">describtion</label>
+    <textarea formControlName="describtion"class="form-control mb-3" name="describtion" id="describtion" rows="3"></textarea>
+
+    <!-- <div *ngIf="formdetails.get('overviwe')?.errors&&formdetails.get('overviwe')?.touched">
+        <p *ngIf="formdetails.get('overviwe')?.getError('required')" class=" alert alert-danger ">overviwe is Requierd</p>
+    </div> -->
+
+    <label for="formFile" class="form-label">losted Img</label>
+    <input class="form-control" type="file" (change)="onFileSelect($event)" name="img" id="formFile" >
+    <!-- <div *ngIf="formdetails.get('img')?.errors&&formdetails.get('img')?.touched">
+        <p *ngIf="formdetails.get('img')?.getError('required')" class=" alert alert-danger ">img is Requierd</p>
+    </div> -->
+    <button [disabled]="myForm.invalid"  type="submit" class="btn-primary btn mt-3">
+        <span  *ngIf="isLoading">
+            <i class=" fas fa-spinner fa-spin"></i>
+        </span>
+        <span *ngIf="!isLoading">
+            Register
+        </span>
+    </button>
+
+</form>
+</div>
+</div>

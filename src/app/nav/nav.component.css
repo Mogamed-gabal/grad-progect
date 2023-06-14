@@ -1,0 +1,48 @@
+nav
+{
+    background-image: linear-gradient(183deg,rgb(6 6 24),rgb(26 62 81));
+}
+
+ul li
+{
+    transition: .7s ease-in;
+    position: relative;
+}
+ul li:hover
+{
+    transform: scale(1.06);   
+ 
+}
+
+ul li::before
+{
+    content: '';
+    background-image: linear-gradient(183deg,rgb(6 6 24),rgb(26 62 81));
+
+    width: 0px;
+    height: 4px;
+    position: absolute;
+    top: 0;
+    left: 7px;
+    transition: .7s ease-in;
+}
+ul li:hover::before
+{
+    width: 85%;
+}
+.log-out
+{
+    
+    font-size: 16px;
+   
+}
+.out
+{
+    cursor: pointer;
+}
+.log-out img
+{
+    height: 41px;
+    width: 45px;
+    border-radius: 50%;
+}

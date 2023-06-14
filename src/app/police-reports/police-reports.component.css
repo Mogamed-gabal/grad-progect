@@ -1,0 +1,17 @@
+p
+{
+    FONT-WEIGHT: 700;
+    FONT-SIZE: 23PX;
+    cursor: pointer;
+    transition: .3s ease-in-out all;
+    padding-top: 10px;
+}
+p:hover
+{
+    transform:scale(1.05);
+    color:#131365
+}
+img
+{
+    border-radius: 10px;
+}

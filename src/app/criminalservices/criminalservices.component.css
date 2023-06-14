@@ -1,0 +1,24 @@
+.contianer
+{
+    padding-bottom: 50px;
+}
+
+.feash
+{
+    font-size: 134px;
+    padding: 50px;
+    font-weight: 900;
+    color: #131365;
+}
+.heading
+{
+    FONT-WEIGHT: 700;
+    FONT-SIZE: 23PX;
+    cursor: pointer;
+    transition: .3s ease-in-out all;
+}
+.heading:hover
+{
+    transform:scale(1.05);
+    color:#131365
+}

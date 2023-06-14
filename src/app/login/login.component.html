@@ -1,0 +1,42 @@
+<div class="login pb-5">
+    <div class="container">
+        <div *ngIf="isLogend" class="message pt-4 messag alert alert-danger d-flex align-items-center justify-content-center">
+            {{erroeMessage}}
+        </div>
+    </div>
+    <div class="container text-center mt-3 pt-5 w-75 m-auto">
+        <h2 class=" pt-4">
+            Login
+        </h2>
+        <form  [formGroup]="LoginForm" action="">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email " formControlName="email" class="form-control mb-3" id="email"  placeholder="name@example.com">
+            <div  *ngIf="LoginForm.get('email')?.errors&&LoginForm.get('email')?.touched">
+                <p *ngIf="LoginForm.get('email')?.getError('required')" class=" alert alert-danger pt-1">
+                    Email is requierd
+                </p>
+                <p *ngIf="LoginForm.get('email')?.getError('email')" class=" alert alert-danger pt-1">
+                    Enetr Valid Email
+                </p>
+               
+    
+            </div>
+    
+    
+    
+            <label for="password" class="form-label">Password</label>
+            <input type="password" formControlName="password" class="form-control mb-3" id="password">
+
+    
+            <!-- <button (click)="submitLoginForm(LoginForm)" class=" btn btn-primary m-4 px-4 py-1"></button> -->
+            <button (click)="submitLoginForm(LoginForm)"  class=" btn btn-primary px-2 pt-1" type="submit" >
+                <span  *ngIf="isLoading">
+                   <i class=" fas fa-spinner fa-spin"></i>
+               </span>
+               <span *ngIf="!isLoading">
+                Login
+               </span>
+               </button>  
+        </form>
+    </div>
+</div>

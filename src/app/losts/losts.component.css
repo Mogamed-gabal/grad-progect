@@ -1,0 +1,25 @@
+img
+{
+    border-radius: 17px;
+    cursor: pointer;
+}
+h3
+{
+    cursor: pointer;
+    
+    font-size: 24px;
+    padding: 10px 0 0;
+    font-weight: 700;
+    transition: .3s ease-in;
+}
+p
+{
+    font-size: 17px;
+    letter-spacing: 1.3px;
+    font-weight: 500;
+}
+h3:hover
+{
+    color: rgb(31, 69, 69);
+    transform: skewX(20deg);
+}

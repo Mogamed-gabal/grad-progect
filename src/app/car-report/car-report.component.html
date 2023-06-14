@@ -1,0 +1,102 @@
+<div class="w-100 text-center">
+    <h2 class=" pb-2 pt-4">CarRebort</h2>
+</div>
+
+
+<div class="container w-75 m-auto pb-5">
+    
+
+<p class=" alert alert-danger" *ngIf="err">{{erroeMessage}}</p>
+<form [formGroup]="carRebortForm" action="">
+
+    <label for="full-name" class="form-label">Full-Name</label>
+        <input type="text " formControlName="full_name" class="form-control mb-3" id="full-name" placeholder="Mohamed Gamal Hamed">
+        <div  *ngIf="carRebortForm.get('full_name')?.errors&&carRebortForm.get('full_name')?.touched">
+            <p *ngIf="carRebortForm.get('full_name')?.getError('required')" class=" alert alert-danger pt-1">Name is requierd</p>
+            <p *ngIf="carRebortForm.get('full_name')?.getError('minlength')" class=" alert alert-danger pt-1">
+                Name is to short
+            </p>
+            <p *ngIf="carRebortForm.get('full_name')?.getError('maxlength')" class=" alert alert-danger pt-1">
+                Name can not be more than 20char
+            </p>
+        </div>
+
+
+
+        <label for="idNumber" class="form-label">Car Number</label>
+        <input type="idNumber" formControlName="idNumber" class="form-control mb-3" id="idNumber">
+        <div  *ngIf="carRebortForm.get('idNumber')?.errors&&carRebortForm.get('idNumber')?.touched">
+            <p *ngIf="carRebortForm.get('idNumber')?.getError('required')" class=" alert alert-danger pt-1">
+                idNumber is requierd
+            </p>
+        </div>
+
+
+
+        <label for="model" class="form-label">CarModel</label>
+        <input type="text " formControlName="model" class="form-control mb-3" id="model" placeholder="">
+        <div  *ngIf="carRebortForm.get('model')?.errors&&carRebortForm.get('model')?.touched">
+            <p *ngIf="carRebortForm.get('model')?.getError('required')" class=" alert alert-danger pt-1">
+                model is requierd
+            </p>
+        </div>
+
+
+
+        <label for="brand" class="form-label">Carbrand</label>
+        <input type="text " formControlName="brand" class="form-control mb-3" id="brand">
+        <div  *ngIf="carRebortForm.get('brand')?.errors&&carRebortForm.get('brand')?.touched">
+            <p *ngIf="carRebortForm.get('brand')?.getError('required')" class=" alert alert-danger pt-1">
+                brand is requierd
+            </p>
+        </div>
+
+
+        <label for="licenPlate" class="form-label">CarlicenPlate</label>
+        <input type="text " formControlName="licenPlate" class="form-control mb-3" id="licenPlate">
+        <div  *ngIf="carRebortForm.get('licenPlate')?.errors&&carRebortForm.get('licenPlate')?.touched">
+            <p *ngIf="carRebortForm.get('licenPlate')?.getError('required')" class=" alert alert-danger pt-1">
+                licenPlate is requierd
+            </p>
+        </div>
+
+        <label for="color" class="form-label">CarColor</label>
+        <input type="text " formControlName="color" class="form-control mb-3" id="color">
+        <div  *ngIf="carRebortForm.get('color')?.errors&&carRebortForm.get('color')?.touched">
+            <p *ngIf="carRebortForm.get('color')?.getError('required')" class=" alert alert-danger pt-1">
+                color is requierd
+            </p>
+        </div>
+        
+       <label for="dateof" class="form-label">Dateof</label>
+        <input type="text " formControlName="dateof" class="form-control mb-3" id="dateof" placeholder="">
+        <div  *ngIf="carRebortForm.get('dateof')?.errors&&carRebortForm.get('dateof')?.touched">
+            <p *ngIf="carRebortForm.get('dateof')?.getError('required')" class=" alert alert-danger pt-1">
+                dateof is requierd
+            </p>
+        </div>
+        
+        <label for="description" class="form-label">what happend?</label>
+        <textarea class=" form-control mb-2" name="" formControlName="dwescribtio" id="" cols="30" rows="10"></textarea>
+        <div  *ngIf="carRebortForm.get('dwescribtio')?.errors&&carRebortForm.get('dwescribtio')?.touched">
+            <p *ngIf="carRebortForm.get('dwescribtio')?.getError('required')" class=" alert alert-danger pt-1">
+                Describtion is requierd
+            </p>
+        </div>
+
+
+
+        
+
+        
+        <button  (click)="sendData()"  class=" btn btn-primary px-2 pt-1" type="submit" >
+            <span  *ngIf="isLoading">
+                <i class=" fas fa-spinner fa-spin"></i>
+            </span>
+            <span  *ngIf="!isLoading" >
+                Submit
+            </span>
+            </button>  
+
+</form>
+</div>

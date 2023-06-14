@@ -1,0 +1,17 @@
+<div class="p-3 container w-100">
+    <div class="gx-5 row d-flex justify-content-center w-100" >
+        <div *ngFor="let post of data" class="col-md-12 ">
+            <div class="box p-4 ">
+                <div class="card" style="width: 18rem;" >
+                    <img [src]="imgPrefix+post.img" class="card-img-top w-100" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{post.user_name}}</h5>
+                      <p class="card-text">{{post.describtion}}</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

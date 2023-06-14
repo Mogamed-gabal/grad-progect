@@ -1,0 +1,36 @@
+{
+  "users": [
+    {
+      "full_name": "mohamed",
+      "password": 2020,
+      "country": "australia",
+      "email":"gabalmohamed456@gmail.com",
+      "address":"egypt cairo",
+      "jop":"doctor",
+      "national_id":"14",
+     " mother_name":"sanaa"
+    }
+    ,
+    {
+      "full_name": "Ahmed moahmed ahmed",
+      "password": 2020,
+      "country": "australia",
+      "email":"gabalmohamed456@gmail.com",
+      "address":"egypt cairo",
+      "jop":"doctor",
+      "national_id":"14",
+     " mother_name":"sanaa"
+    },
+    {
+      "full_name": "Ahmed moahmed ahmed",
+      "password": 2020,
+      "country": "australia",
+      "email":"gabalmohamed456@gmail.com",
+      "address":"egypt cairo",
+      "jop":"doctor",
+      "national_id":"14",
+     " mother_name":"sanaa abdelwahab"
+    }
+   
+  ]
+}

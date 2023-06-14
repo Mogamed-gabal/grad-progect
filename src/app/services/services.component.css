@@ -1,0 +1,12 @@
+.container
+{
+    padding-bottom: 130px;
+}
+
+.paginationo
+{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 12px;
+}
