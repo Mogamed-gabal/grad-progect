@@ -1,4 +1,4 @@
-
+import { NgxSpinnerService } from "ngx-spinner";
 import { RebortsService } from './../reborts.service';
 import { Component,OnInit } from '@angular/core';
 import jwt_decode from "jwt-decode";
@@ -15,11 +15,12 @@ export class UserMobileRebortComponent implements OnInit {
   token:any
   Date:any
 
-  constructor(private RebortsService:RebortsService){}
+  constructor(private RebortsService:RebortsService,private spinner: NgxSpinnerService){}
 
 
   ngOnInit(): void {
-    
+    this.spinner.show();
+      
     this.token=(jwt_decode(JSON.stringify(localStorage.getItem('token')) ))
     console.log(this.token)
     this.RebortsService.getUserMobilsReborts(this.token.userMail).subscribe({
@@ -29,6 +30,8 @@ export class UserMobileRebortComponent implements OnInit {
        
         this.Date=data.setDate(1)
         console.log(this.data)
+        this.spinner.hide();
+      
       }
     })
   }

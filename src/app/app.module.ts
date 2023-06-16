@@ -60,7 +60,6 @@ import { RebortComponent } from './rebort/rebort.component';
 import { MohamedComponent } from './mohamed/mohamed.component';
 import { ObjectsPipe } from './objects.pipe';
 import { WelcomeComponent } from './welcome/welcome.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -116,7 +115,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
     
   ],
   imports: [
-    NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' }),
+    NgxSpinnerModule,
     AppRoutingModule,
     BrowserModule,
     ReactiveFormsModule,

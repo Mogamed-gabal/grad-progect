@@ -1,7 +1,11 @@
+<ngx-spinner ><span class="loader"></span></ngx-spinner>
 <div class="container p-5 mb-5">
     <div class="selector d-flex justify-content-center  categories">
       
-        <p class="p3" style="padding-right: 5px;margin-top: 17px;" (click)="getAllCategories()">all</p>
+        <p class="p3" style="padding-right: 5px;margin-top: 17px;cursor: pointer;   
+        font-size: 22px;
+        font-weight: 400;
+        stroke-linecap: butt;" (click)="getAllCategories()">all</p>
             <ul class=" list-unstyled" *ngFor="let category of  categories">
                
                 <li class=" p-3 " (click)="getCategories(category)">{{category}}</li>
@@ -14,12 +18,18 @@
       </div>
     <div class="row g-4 d-flex justify-content-between">
         <div *ngFor="let peoble of losted " class="col-md-4 ">
-            <div class="card " style="width: 18rem;">
-                <img  [src]="imgPrefix+peoble.img" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">{{peoble.user_name}}</h5>
-                <p  class="card-text" >{{peoble.describtion}}</p>
-                  <a [routerLink]="" class="btn btn-primary">Go somewhere</a>
+              <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img class="w-100 h-100" [src]="imgPrefix+peoble.img" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">{{peoble.user_name}}</h5>
+                      <p class="card-text">{{peoble.describtion}}.</p>
+                      <p class="card-text"><small class="text-body-secondary">Last updated{{peoble.ceatedAt}}</small></p>
+                    </div>
+                  </div>
                 </div>
               </div>
             

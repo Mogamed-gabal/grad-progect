@@ -42,7 +42,7 @@
                             <i (click)="opnForm()" class="edit-user-img fa-solid fa-user-pen"></i>
                         </div>
                        
-                        <img src="{{userImg}}" alt="">
+                        <img [src]="imgPrefix+token.img" alt="">
                     </div>
                     <div class="user-data text-center pb-5">
                         <ul class="list-unstyled">
@@ -73,7 +73,14 @@
             <div class="text">
                 <label for="formFile py-5" class="form-label">upload Your Img</label>
                  <input class="form-control" type="file" (change)="onFileSelect($event)" name="user_img" id="formFile" >
-                <button (click)="sendData() " class="btn btn-primary mb-3 mt-3 px-5 py-2">Submit</button> <br>
+                <button (click)="sendData() " class="btn btn-primary mb-3 mt-3 px-5 py-2"> 
+                    <span  *ngIf="isLoading">
+                       <i class=" fas fa-spinner fa-spin"></i>
+                   </span>
+                   <span *ngIf="!isLoading">
+                       Submit
+                   </span>
+                   </button> <br>
                 <button (click)="openForm=false" class="btn btn-secondary mb-3 px-4 py-1">cansel</button>
             </div>
     </div>
