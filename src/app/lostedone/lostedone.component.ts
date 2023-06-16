@@ -1,6 +1,6 @@
 import { PeobleService } from './../peoble.service';
 import { Component,OnInit } from '@angular/core';
-
+import { NgxSpinnerService } from "ngx-spinner";
 @Component({
   selector: 'app-lostedone',
   templateUrl: './lostedone.component.html',
@@ -8,7 +8,7 @@ import { Component,OnInit } from '@angular/core';
 })
 export class LostedoneComponent implements OnInit {
  
-constructor(private _PeobleService:PeobleService)
+constructor(private _PeobleService:PeobleService,private spinner: NgxSpinnerService)
 {}
 videoOptions = {
   width: 10,
@@ -35,10 +35,18 @@ closeCam()
   this.openStream=false
 }
 ngOnInit(): void {
+  this.spinner.show();
     this._PeobleService.getdetail().subscribe({
-      next:(peoble)=>this.losted=peoble.moedels
-  
-    })
+      next:(peoble)=>{
+        this.losted=peoble.moedels
+        this.spinner.hide()
+      }
+    }
+    
+    
+    )
+
+    
     
   }
   

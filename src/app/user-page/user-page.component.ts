@@ -22,6 +22,7 @@ export class UserPageComponent implements OnInit  {
   user_Jop:string=''
   user_phone:string=''
   imgPrefix='https://policia.onrender.com/'
+  avaterImg='../../assets/OIP (1).jpeg'
   userImg:string=''
   constructor(private UsersService:UsersService,private fb:FormBuilder,private Router:Router,private spinner: NgxSpinnerService){}
   opnForm()
@@ -73,7 +74,10 @@ export class UserPageComponent implements OnInit  {
     if(this.token.find(this.userImg))
     {
       this.userImg=this.token.img
-    }
+    }else
+    {
+      this.userImg=this.avaterImg
+       }
     
   }
 }

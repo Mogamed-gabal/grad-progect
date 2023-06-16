@@ -1,4 +1,5 @@
 <div class="container-fluid w-100">
+<ngx-spinner ><span class="loader"></span></ngx-spinner>
     <div class=" row justify-content-center d-flex" *ngFor="let one of allDetails">
         <div class="col-md-4"  >
             <div class="box px-1 py-4">
@@ -8,14 +9,14 @@
         </div>
         <div   class="col-md-8">
             <div class="box px-5 py-5 mt-2">
-                <h3 class=" text-black "><span>Chield Name:</span> {{one.fullName}}</h3>
-                <p class="pt-2" style="font-size: 19px;
-                font-weight: 700;"><span class="btn btn-secondary ">FounderAcount:</span>{{one.email}}</p>
-                <p class="pt-2" style="font-size: 19px;
-                font-weight: 700;"><span class="btn btn-secondary ">FounderNumber:</span> {{one.phone_number}}</p>
-                <p class="pt-2" style="font-size: 17px;
+                <h3 class=" text-black "><span>Poster Name:</span> {{one.fullName}}</h3>
+                <p class="pt-4 px-4" style="font-size: 19px;
+                font-weight: 700;"><span class="btn btn-secondary ">PosterAcount:</span>{{one.email}}</p>
+                <p class="pt-4 px-4" style="font-size: 19px;
+                font-weight: 700;"><span class="btn btn-secondary ">PosterNumber:</span> {{one.phone_number}}</p>
+                <p class="pt-4 px-4" style="font-size: 17px;
                 font-weight: 500;"><span class="btn btn-secondary ">AllDetails:</span> {{one.overviwe}}</p>
-                <p class="pt-2" style="font-size: 19px;
+                <p class="pt-4 px-4" style="font-size: 19px;
                 font-weight: 700;"><span class="btn btn-secondary ">postedTime:</span> {{one.createdAt}}</p>
             </div>
 

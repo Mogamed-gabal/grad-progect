@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, RequiredValidator, FormBuilder } from '@angular/forms';
 import { Component,OnInit } from '@angular/core'
 import { JsonPipe } from '@angular/common';
-
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-adddetails',
@@ -17,7 +17,7 @@ export class AdddetailsComponent implements OnInit {
   erroeMessage:string='';
   err:boolean=false
   isLoading:Boolean=false
-  constructor(private _Router:Router ,private PeobleService:PeobleService,private fb:FormBuilder)
+  constructor(private _Router:Router ,private PeobleService:PeobleService,private fb:FormBuilder,private spinner: NgxSpinnerService)
 {}
 
 

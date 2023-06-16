@@ -8,7 +8,7 @@
     <p class=" alert alert-danger" *ngIf="err">{{erroeMessage}}</p>
 
 <form action="submit" [formGroup]="myForm" (ngSubmit)="onSubmit()">
-    <label for="nameInput1" class="form-label">Full_Name</label>
+    <label for="nameInput1" class="form-label">Poster Full_Name</label>
     <input formControlName ="fullName" name="fullName" type="text" class="form-control mb-3" id="nameInput1" placeholder="Enter Name From Id">
     <!-- <div *ngIf="formdetails.get('fullName')?.errors&&formdetails.get('fullName')?.touched">
     <p *ngIf="formdetails.get('fullName')?.getError('required')" class=" alert alert-danger ">Name is Requierd</p>
@@ -31,7 +31,7 @@
         <p *ngIf="formdetails.get('phone_number')?.getError('required')" class=" alert alert-danger ">phone_number is Requierd</p>
         <p *ngIf="formdetails.get('phone_number')?.getError('pattern')" class=" alert alert-danger  ">Enter Valid phone_number</p>
     </div> -->
-    <label for="  chieldAge" class="form-label ">Chield Age</label>
+    <label for="  chieldAge" class="form-label ">Age of Missing/Founded</label>
     <input type="number" formControlName="chieldAge" name="chieldAge" class="form-control mb-3" id="chieldAge" >
     <!-- <div *ngIf="formdetails.get('chieldAge')?.errors&&formdetails.get('  chieldAge')?.touched">
         <p *ngIf="formdetails.get('chieldAge')?.getError('required')" class=" alert alert-danger ">  chieldAge is Requierd</p>
@@ -54,7 +54,7 @@
             <i class=" fas fa-spinner fa-spin"></i>
         </span>
         <span *ngIf="!isLoading">
-            Register
+            Submit
         </span>
     </button>
 

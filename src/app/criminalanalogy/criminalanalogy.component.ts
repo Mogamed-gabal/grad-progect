@@ -75,6 +75,7 @@ constructor(private FingerService:FingerService,private _Router:Router){}
 
   ngOnInit(): void {
     this.test()
+    this.test2()
     this.token=(jwt_decode(JSON.stringify(localStorage.getItem('token')) ))
     console.log(this.token)
    this.userName=this.token.userName

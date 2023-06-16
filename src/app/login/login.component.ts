@@ -50,7 +50,11 @@ export class LoginComponent implements OnInit , OnChanges {
 
 
   ngOnInit(): void {
-       
+       const token=localStorage.getItem('token')
+       if(token)
+       {
+        this._Router.navigate(['/home'])
+       }
     
   }
 
@@ -59,3 +63,4 @@ export class LoginComponent implements OnInit , OnChanges {
   }
 
 }
+
